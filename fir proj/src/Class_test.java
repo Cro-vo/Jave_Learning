@@ -1,4 +1,7 @@
-
+/*
+在Java类中，普通函数需要加static，成为类的静态函数，才能在main中调用
+								否则函数将变成类的成员函数
+*/
 public class Class_test {
 	//成员变量
 	int total;

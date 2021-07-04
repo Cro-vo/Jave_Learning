@@ -18,6 +18,19 @@ public class array {
 		System.out.println("a = "+ a + ",b = " + b);
 		f(a, b);
 		System.out.println("a = "+ a + ",b = " + b);
+		
+		int[] c = {1,2,3};
+		for(int i : c)
+		{
+			System.out.println(i);
+			i=0;
+		}
+		
+		for(int i : c)
+		{
+			System.out.println(i);
+		}
+		
 	}
 
 }

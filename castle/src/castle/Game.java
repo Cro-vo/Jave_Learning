@@ -1,13 +1,18 @@
 package castle;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Game {
     private Room currentRoom;
+    private HashMap<String, Handler> handlers = new HashMap<String, Handler>();
         
     public Game() 
     {
         createRooms();
+        handlers.put("bye", new HandlerBye(this));
+        handlers.put("help", new HandlerHelp(this));
+        handlers.put("go", new HandlerGo(this));
     }
 
     private void createRooms()
@@ -48,13 +53,7 @@ public class Game {
 
     // 以下为用户命令
 
-    private void printHelp() 
-    {
-        System.out.print("迷路了吗？你可以做的命令有：go、 bye、 help");
-        System.out.println("如：\tgo east");
-    }
-
-    private void goRoom(String direction) 
+    public void goRoom(String direction) 
     {
         Room nextRoom = currentRoom.getExit(direction);
 
@@ -74,26 +73,46 @@ public class Game {
         System.out.println(currentRoom.getRoomDesc());
         System.out.println();
 	}
+	
+	private void play()
+	{
+		Scanner in = new Scanner(System.in);
+		while (true) {
+			String line = in.nextLine();
+			String[] words = line.split(" ");
+			Handler handler = handlers.get(words[0]);
+			String value = "";
+			if (words.length > 1)
+			{
+				value = words[1];
+			}
+			if (handler != null)
+			{
+				handler.doCmd(value);
+				if (handler.isBye())
+				{
+					break;
+				}
+			}
+			
+//			if (words[0].equals("help")) {
+//				printHelp();
+//			} else if (words[0].equals("go")) {
+//				goRoom(words[1]);
+//			} else if (words[0].equals("bye")) {
+//				break;
+//			}
+		}
+		in.close();
+	}
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
 		Game game = new Game();
 		game.printWelcome();
-
-        while ( true ) {
-        		String line = in.nextLine();
-        		String[] words = line.split(" ");
-        		if ( words[0].equals("help") ) {
-        			game.printHelp();
-        		} else if (words[0].equals("go") ) {
-        			game.goRoom(words[1]);
-        		} else if ( words[0].equals("bye") ) {
-        			break;
-        		}
-        }
-        
+		game.play();
+		
         System.out.println("感谢您的光临。再见！");
-        in.close();
+        
 	}
 
 }

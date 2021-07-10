@@ -14,6 +14,17 @@ public class Game {
         handlers.put("help", new HandlerHelp(this));
         handlers.put("go", new HandlerGo(this));
     }
+    
+    public String helpPrompt()
+    {
+    	StringBuilder sb = new StringBuilder();
+    	for (String str : handlers.keySet())
+    	{
+    		sb.append(str);
+    		sb.append(" ");
+    	}
+    	return sb.toString();
+    }
 
     private void createRooms()
     {

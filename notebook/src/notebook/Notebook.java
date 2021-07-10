@@ -38,6 +38,8 @@ public class Notebook {
 		nb.addNote("first");
 		nb.addNote("second");
 		System.out.println(nb.getNote(0));
+		nb.removeNote(0);
+		System.out.println(nb.getNote(0));
 	}
 
 }

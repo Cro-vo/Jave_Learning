@@ -5,39 +5,39 @@ public class String_test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ³õÊ¼»¯
+		// åˆå§‹åŒ–
 		Scanner in = new Scanner(System.in);
 		
-		// StringÀàÎª×Ö·û´®µÄ¹ÜÀíÕß¶ø·ÇËùÓĞÕß
-		// ×Ö·û´®³õÊ¼»¯
+		// Stringç±»ä¸ºå­—ç¬¦ä¸²çš„ç®¡ç†è€…è€Œéæ‰€æœ‰è€…
+		// å­—ç¬¦ä¸²åˆå§‹åŒ–
 		String str = new String("hello world");
 		String str1 = "Hello world";
 		
-		// in.next() ¶ÁÈ¡Ò»¸öµ¥´Ê
- 		// in.nextLine() ¶ÁÈ¡Ò»ĞĞ
+		// in.next() è¯»å–ä¸€ä¸ªå•è¯
+ 		// in.nextLine() è¯»å–ä¸€è¡Œ
 		str = in.next();
 		System.out.println(str);
 		str = in.nextLine();
 		System.out.println(str);
 		
-		// ×Ö·û´®ÅĞ¶ÏÏàµÈ str.equals()
+		// å­—ç¬¦ä¸²åˆ¤æ–­ç›¸ç­‰ str.equals()
 		str.equals(str1);
 		
-//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª×Ö·û´®²Ù×÷¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª	
-		// ×Ö·û´®´óĞ¡±È½Ï str.compareTo(String);
-		// (ÎŞÊÓ´óĞ¡Ğ´)	str.compareToIgnoreCase(String);
-		// ×Ö·û´®ÔÚË÷Òı´¦µÄ×Ö·û str.charAt(index);
+//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”å­—ç¬¦ä¸²æ“ä½œâ€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”	
+		// å­—ç¬¦ä¸²å¤§å°æ¯”è¾ƒ str.compareTo(String);
+		// (æ— è§†å¤§å°å†™)	str.compareToIgnoreCase(String);
+		// å­—ç¬¦ä¸²åœ¨ç´¢å¼•å¤„çš„å­—ç¬¦ str.charAt(index);
 		
-		// »ñµÃ×Ó´® str.substring();
+		// è·å¾—å­ä¸² str.substring();
 		
-		// ²éÕÒ×Ö·û str.indexOf(); str.lastIndexOf();
+		// æŸ¥æ‰¾å­—ç¬¦ str.indexOf(); str.lastIndexOf();
 		
-		// ÅĞ¶ÏÊÇ·ñÒÔstringÎª¿ªÊ¼ str.startsWith(String);
-		// ÅĞ¶ÏÊÇ·ñÒÔstringÎª¿ªÊ¼ str.endsWith(String);
-		// È¥³ıÇ°ºó¿Õ¸ñ str.trim();
-		// Ìæ»» str.replace(c1, c2);
-		// Ğ¡Ğ´ str.toLowerCase();
-		// ´óĞ´ str.toUpperCase();
+		// åˆ¤æ–­æ˜¯å¦ä»¥stringä¸ºå¼€å§‹ str.startsWith(String);
+		// åˆ¤æ–­æ˜¯å¦ä»¥stringä¸ºå¼€å§‹ str.endsWith(String);
+		// å»é™¤å‰åç©ºæ ¼ str.trim();
+		// æ›¿æ¢ str.replace(c1, c2);
+		// å°å†™ str.toLowerCase();
+		// å¤§å†™ str.toUpperCase();
 		
 		
 		

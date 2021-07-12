@@ -4,16 +4,16 @@ import java.util.Scanner;
 public class Hello {
 
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		System.out.println("hello world!");
 
-		// in.next() ¶ÁÈ¡Ò»¸öµ¥´Ê
- 		// in.nextLine() ¶ÁÈ¡Ò»ĞĞ
-		// ¶ÁÈ¡ÄÚÈİ
+		// in.next() è¯»å–ä¸€ä¸ªå•è¯
+ 		// in.nextLine() è¯»å–ä¸€è¡Œ
+		// è¯»å–å†…å®¹
 		Scanner in = new Scanner(System.in);
 		System.out.println(in.nextLine());
 		
-		// ±äÁ¿´æ´¢
+		// å˜é‡å­˜å‚¨
 		int num = in.nextInt();
 		System.out.println("100-" + num + "=" + (100-num));
 

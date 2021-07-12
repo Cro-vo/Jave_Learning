@@ -1,25 +1,25 @@
 /*
-ÔÚJavaÀàÖĞ£¬ÆÕÍ¨º¯ÊıĞèÒª¼Óstatic£¬³ÉÎªÀàµÄ¾²Ì¬º¯Êı£¬²ÅÄÜÔÚmainÖĞµ÷ÓÃ
-								·ñÔòº¯Êı½«±ä³ÉÀàµÄ³ÉÔ±º¯Êı
+åœ¨Javaç±»ä¸­ï¼Œæ™®é€šå‡½æ•°éœ€è¦åŠ staticï¼Œæˆä¸ºç±»çš„é™æ€å‡½æ•°ï¼Œæ‰èƒ½åœ¨mainä¸­è°ƒç”¨
+								å¦åˆ™å‡½æ•°å°†å˜æˆç±»çš„æˆå‘˜å‡½æ•°
 */
 public class Class_test {
-	//³ÉÔ±±äÁ¿
+	//æˆå‘˜å˜é‡
 	int total;
 	int balance=20;
 	
-	//¹¹Ôìº¯Êı
+	//æ„é€ å‡½æ•°
 	Class_test()
 	{
 		total = 50;
 	}
 	
-	//¹¹Ôìº¯Êı£¨´ø²Î£©
+	//æ„é€ å‡½æ•°ï¼ˆå¸¦å‚ï¼‰
 	Class_test(int total)
 	{
 		this.total = total;
 	}
 	
-	//³ÉÔ±º¯Êı
+	//æˆå‘˜å‡½æ•°
 	void showTotal()
 	{
 		System.out.println("total = " + total);
@@ -28,12 +28,62 @@ public class Class_test {
 	{
 		System.out.println("balance = " + balance);
 	}
-	 
+	
+	
+	// é‡å†™çˆ¶ç±»Objectçš„equalsæ–¹æ³•
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Class_test a = (Class_test)obj;
+		return this.balance==a.balance&&this.total==a.balance;
+	}
+	
+	//å®šä¹‰ä¸å®šé•¿å‡½æ•°
+	public static int add(int...a)
+	{
+		int sum = 0;
+		for (int x:a)
+		{
+			sum += x;
+		}
+		return sum;
+	}
+	
+	//ç›¸å¯¹äºä¸å®šé•¿å‡½æ•°ï¼Œä¼˜å…ˆè°ƒç”¨æ­¤å‡½æ•°
+	public static int add(int a)
+	{
+		return 2;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Class_test a = new Class_test();
+		Class_test b = new Class_test();
 		a.showBalance();
 		a.showTotal();
+		System.out.println(a.equals(b));
+		
+		System.out.println(a instanceof Class_test);
+		
+		// å…³é”®å­— instanceof ç¤ºä¾‹
+		Base base = new Base();
+		Derive derive = new Derive();
+		System.out.println(base instanceof Base);//true
+		System.out.println(base instanceof Derive);//false
+		System.out.println(derive instanceof Base);//true
+		System.out.println(derive instanceof Derive);//true
+		
+		System.out.println(add(1,2));
 	}
 
+}
+
+class Base
+{
+	
+}
+
+class Derive extends Base 
+{
+	
 }

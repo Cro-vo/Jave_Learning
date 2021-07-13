@@ -29,7 +29,7 @@ public class Class_test {
 		System.out.println("balance = " + balance);
 	}
 	
-	
+	//所有类都继承自Object类，该类中有部分的函数
 	// 重写父类Object的equals方法
 	@Override
 	public boolean equals(Object obj) {

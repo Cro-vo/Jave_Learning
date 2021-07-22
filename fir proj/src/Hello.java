@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Hello {
@@ -21,7 +22,6 @@ public class Hello {
 		int num = in.nextInt();
 		System.out.println("100-" + num + "=" + (100-num));
 		
-	
 
 	}
 

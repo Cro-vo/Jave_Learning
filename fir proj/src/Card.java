@@ -8,11 +8,11 @@ public class Card {
 	public static ArrayList<String> getCard()
 	{
 		ArrayList<String> list = new ArrayList<>();
-		String[] a = {"♦", "♥", "♣", "♠"};
+		String[] a = {"♠", "♥", "♣", "♦"};
 
-		String[] b = {"2", "A", "3", "4",
-				"5", "6", "7", "8",
-				"9", "10", "J", "Q", "K"};
+		String[] b = {"2", "A", "K", "Q",
+				"J", "10", "9", "8",
+				"7", "6", "5", "4", "3"};
 
 		for (int i = 0; i < a.length; i++)
 		{
@@ -73,6 +73,9 @@ public class Card {
 		System.out.println(farmer2.size() + " " + farmer2);
 		System.out.println("landlord:");
 		System.out.println(landlord.size() + " " + landlord);
+		
+		
+		
 	}
 
 }

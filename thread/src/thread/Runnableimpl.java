@@ -1,0 +1,19 @@
+package thread;
+
+public class Runnableimpl implements Runnable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < 10; i++)
+		{
+			System.out.println("Hello world! -->" + i);
+		}
+	}
+
+}

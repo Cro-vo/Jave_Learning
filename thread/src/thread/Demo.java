@@ -8,7 +8,7 @@ public class Demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 方法一创建多线程（通过继承 Thread 类本身）
+		// 方法一创建多线程（通过继承 Thread 类本身,子类重写run方法）
 		MyThread mt = new MyThread();
 //		mt.start();
 		

@@ -2,7 +2,10 @@ package file;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -12,19 +15,75 @@ public class file_test {
 		// TODO Auto-generated method stub
 //		test01();
 //		test02();
-		test03();
+//		test03();
+//		test04();
+//		test05();
+		test06();
 	}
 	
+	// FileWriter
+	private static void test06() throws IOException {
+		// TODO Auto-generated method stub
+		FileWriter fw = new FileWriter("2.txt");
+		fw.write("你好");
+//		fw.flush();
+		fw.close();
+	}
+
+	// FileReader
+	private static void test05() throws IOException {
+		// TODO Auto-generated method stub
+		FileReader fr = new FileReader("D:\\eclipse file\\first project\\file\\1.txt");
+		int len = 0;
+		while((len = fr.read()) != -1)
+		{
+			System.out.print((char)len);
+		}
+		fr.close();
+	}
+
+	// 复制文件
+	private static void test04() throws IOException {
+		// TODO Auto-generated method stub
+		long startTime = System.currentTimeMillis();
+		FileInputStream fis = new FileInputStream("ttt.jpg");
+		FileOutputStream des = new FileOutputStream("src\\ttt.jpg");
+
+		
+		// 法一：单个字节复制
+//		int len = 0;
+//		while((len = fis.read()) != -1)
+//		{
+//			des.write(len);
+//		}
+		
+		// 法二：字节数组复制，效率更高
+		byte [] b = new byte[1024];
+		int len = 0;
+		while((len = fis.read(b)) != -1)
+		{
+			des.write(b);
+		}
+		
+		
+		fis.close();
+		des.close();
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println("共耗时：" + (endTime - startTime) + "毫秒");
+	}
+
 	// File InputStream的使用
 	private static void test03() throws IOException {
 		// TODO Auto-generated method stub
 		FileInputStream fis =
 				new FileInputStream("D:\\\\eclipse file\\\\first project\\\\file\\\\1.txt");
-		int single = 0;
+		byte[] b = new byte[1024];	// 一般定义为1024的整数倍
+		int len = 0;
 		
-		while((single = fis.read()) != -1)
-		{
-			System.out.print((char)single);
+		while((len = fis.read(b)) != -1)			// read(byte[])返回读取到的个数						
+		{											// read()返回读取到的字节
+			System.out.println(new String(b,0,len));	// String的构造方法可将byte数组转化
 		}
 		fis.close();
 		

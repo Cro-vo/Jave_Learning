@@ -1,0 +1,2 @@
+a97
+输出在printstream.txt文件中

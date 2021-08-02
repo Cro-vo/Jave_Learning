@@ -12,6 +12,18 @@ public class Demo {
 		MyThread mt = new MyThread();
 //		mt.start();
 		
+		// 匿名内部类简化写法
+		new Thread() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.println("子类重写run()方法");
+			}
+			
+		}.start();
+		
+		
 		
 //		System.out.println(Thread.currentThread().getName());
 
@@ -31,6 +43,17 @@ public class Demo {
 		Thread t = new Thread(new Runnableimpl());
 		t.start();
 		
+		
+		// 匿名内部类简化写法
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.println("接口实现run()方法");
+			}
+		}).start();
+
 	}
 
 }

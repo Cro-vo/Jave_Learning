@@ -16,9 +16,9 @@ public class file_test {
 //		test01();
 //		test02();
 //		test03();
-//		test04();
+		test04();
 //		test05();
-		test06();
+//		test06();
 	}
 	
 	// FileWriter
@@ -62,7 +62,7 @@ public class file_test {
 		int len = 0;
 		while((len = fis.read(b)) != -1)
 		{
-			des.write(b);
+			des.write(b, 0, len);
 		}
 		
 		
